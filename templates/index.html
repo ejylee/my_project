@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BRANDNEW Freitag</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function postemail() {
+                let email = $("#email").val();
+                $.ajax({
+                    type: "POST", // POST 방식으로 요청하겠다.
+                    url: "/index", // /memo라는 url에 요청하겠다.
+                    data: {user_email: email}, // 데이터를 주는 방법
+                    success: function (response) { // 성공하면
+                        if (response["result"] == "success") {
+                            alert("신상 알림이 등록되었습니다!");
+                            // 3. 성공 시 페이지 새로고침하기
+                            window.location.reload();
+                        } else {
+                            alert("문제가 생겼습니다. 다시 입력해주세요.")
+                        }
+                    }
+                })
+            }
+
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>BRANDNEW FREITAG</h1>
+    <div>
+        <p>
+            Your E-mail: <input id="email" type="text" />
+        </p>
+    </div>
+    <button onclick="postemail()">Send me Alarm</button>
+    <br>
+    <div>
+        <a href ="/delete">wanna delete?</a>
+    </div>
+</body>
+</html>
