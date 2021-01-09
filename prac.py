@@ -14,6 +14,33 @@ list1 = db_data[0]['productId']
 print("여기는 list1")
 print(list1)
 
+
+# ?! 차이나는 값의 productId, datadimension17, datadimension18, img 이메일로 보내주기
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
+def sendMail() :
+    me = "dallim0524@gmail.com"
+    my_password = "alwlsK35&"
+    you = "biscuit0126@gmail.com"
+
+    msg = MIMEMultipart('alternative')
+    msg['Subject'] = "Alert"
+    msg['From'] = me
+    msg['To'] = you
+
+    html = '<html><body><p>Hi, I have the following alerts for you!</p></body></html>'
+    part2 = MIMEText(html, 'html')
+
+    msg.attach(part2)
+
+    # Send the message via gmail's regular server, over SSL - passwords are being sent, afterall
+    s = smtplib.SMTP_SSL('smtp.gmail.com')
+    s.login(me, my_password)
+    s.sendmail(me, you, msg.as_string())
+    s.quit()
+
 # 새로 크롤링하기 (newBags 리스트 만들기)
 headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
 data = requests.get('https://www.freitag.ch/ko/f41?items=showall',headers=headers)
@@ -37,7 +64,6 @@ for bag in bags:
     img.append(bag.select_one('img'))
 
 list2 = productId
-list2.append("가짜수")
 
 newBags = {'productId': productId}
 print("여기는newBags")
@@ -52,8 +78,12 @@ if len(updated) == 0 :
     print("no change")
 else :
     print("변한게 있어서 메일 보내줘야함!!!!")
+    sendMail()
 #db.bags.insert_one(newBags)
 driver.quit()
 
-# ?! 차이나는 값의 productId, datadimension17, datadimension18, img 이메일로 보내주기
+
+
+
+
 
