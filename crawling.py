@@ -42,11 +42,11 @@ def sendMail(a,b,c,d) :
     you = all_emails
 
     msg = MIMEMultipart('alternative')
-    msg['Subject'] = "프라이탁 공식 홈페이지에 하와이파이브오가 새로 등록되었습니다."
+    msg['Subject'] = "BRANDNEW HAWAII FIVE-O has arrived!"
     msg['From'] = me
     msg['To'] = you
 
-    html = '<html><body><p>' + str(a)+ str(b)+str(c)+str(d)+ 'Hi, I have the following alerts for you!</p></body></html>'
+    html = '<html><body><p>' + str(d) + '<br>' + '<h1 style="margin-top: 16px"> CLICK THE LINK TO GET IT! : https://www.freitag.ch/ko/f41?productID=' + str(a) + '</h1></p></body></html>'
     part2 = MIMEText(html, 'html')
 
     msg.attach(part2)
@@ -125,5 +125,3 @@ else :
         sendMail(productId[index], dataDimension17[index], dataDimension18[index], img[index])
 #db.bags.insert_one(newBags)
 driver.quit()
-
-

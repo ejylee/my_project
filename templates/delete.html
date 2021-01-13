@@ -3,36 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>BRANDNEW Freitag</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script>
         function deleteEmail() {
-                let email = $("#email").val();
-                $.ajax({
-                    type: "POST",
-                    url: "/delete",
-                    data: {user_email: email}, // 데이터를 주는 방법
-                    success: function (response) { // 성공하면
-                        if (response["result"] == "success") {
-                            alert("신상 알림이 해지되었습니다.");
-                        } else {
-                            alert("문제가 생겼습니다. 다시 입력해주세요.")
-                        }
+            let email = $("#email").val();
+            $.ajax({
+                type: "POST",
+                url: "/delete",
+                data: {user_email: email}, // 데이터를 주는 방법
+                success: function (response) { // 성공하면
+                    if (response["result"] == "success") {
+                        alert("신상 알림이 해지되었습니다.");
+                    } else {
+                        alert("문제가 생겼습니다. 다시 입력해주세요.")
                     }
-                })
-            }
+                }
+            })
+        }
 
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
-<body>
-    <div><a href ="http://0.0.0.0:5000/">back</a></div>
-    <h1>BRANDNEW FREITAG 계정 삭제하기</h1>
-    <div><p>등록하신 이메일 주소를 입력하면 알림 등록이 해지됩니다.</p></div>
-    <div>
-        <p>
-            Your E-mail: <input id="email" type="text" />
-        </p>
+<body class="blackbg">
+<div class="blackbg">
+    <div class="back"><a class="white" href="http://0.0.0.0:5000/">← BACK</a></div>
+    <div class="blackwrap">
+        <div class="container">
+            <img class="bye" src="/static/css/bye.png">
+            <h2>let’s delete<br>your account</h2>
+            <div class="contents left">
+                Hope you’ve got your own unique piece of Hawaii Five-O.
+                Now let's stop the alarm by deleting your account.
+            </div>
+            <div>
+                <p>
+                    <input class="dark" id="email" type="text" placeholder="Type your e-mail"/>
+                </p>
+            </div>
+            <button class="whitebtn" onclick="deleteEmail()">DELETE THIS ACCOUNT</button>
+        </div>
     </div>
-    <button onclick="deleteEmail()">Delete My Account</button>
+</div>
 </body>
 </html>

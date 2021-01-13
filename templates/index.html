@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>BRANDNEW Freitag</title>
-     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>BRANDNEW STH</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script>
         function postemail() {
                 let email = $("#email").val();
@@ -27,16 +30,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-    <h1>BRANDNEW FREITAG</h1>
+<div class="wrap">
+<div class="container">
+    <img class="logo" src="/static/css/brandnew.png">
+    <h1>HAWAII FIVE-O</h1>
+    <div class="contents">
+        Are you a big fan of Freitag’s <a class="textlink" href="https://www.freitag.ch/ko/f41?items=showall" target="_blank">HAWAII FIVE-O</a> product?
+          As soon as a new product is posted on the official website,
+        <b class="strong">BRAND NEW STH</b> will notify you by email immediately!
+    </div>
     <div>
         <p>
-            Your E-mail: <input id="email" type="text" />
+            <input placeholder="Type your e-mail" id="email" type="text" />
         </p>
     </div>
-    <button onclick="postemail()">Send me Alarm</button>
+    <button onclick="postemail()">SEND ME ALARM</button>
     <br>
-    <div>
-        <a href ="/delete">wanna delete?</a>
+    <div class="subbtn">
+        <a href ="/delete" >WANNA DELETE ACCOUNT?</a>
     </div>
+</div>
+</div>
 </body>
 </html>
