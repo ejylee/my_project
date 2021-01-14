@@ -29,7 +29,6 @@ body {
     width: 117px;
     display: block;
     margin-top: 12px;
-    margin-left: auto;
     margin-right: auto;
 }
 
@@ -39,8 +38,8 @@ h1 {
     font-weight: 800;
     font-size: 44px;
     line-height: 52px;
-    text-align: center;
-    margin-bottom: 12px;
+    text-align: left;
+    margin-bottom: 20px;
     margin-top: 8px;
     letter-spacing: -0.8px;
 }
@@ -48,17 +47,16 @@ h1 {
 .contents {
     font-family: Roboto;
     font-style: normal;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 20px;
-    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: left;
     margin-bottom: 48px;
 }
 
 .textlink {
     font-family: Roboto;
     color: #009918;
-    font-weight: normal;
     text-decoration: underline;
 }
 
@@ -73,7 +71,7 @@ input {
     border: none;
     border-bottom: 3px solid black;
     background-color: #F2F2F2;
-    padding: 0px;
+    padding : 0px;
     color: #000;
     font-style: normal;
     font-size: 20px;
@@ -103,11 +101,13 @@ button {
     background-color: black;
     color: white;
     font-size: 20px;
+    margin-left: 0px;
 }
+
 
 .subbtn {
     margin-top: 24px;
-    text-align: center;
+    text-align: left;
     font-size: 20px;
     font-color: black;
     font-weight: 600;
@@ -162,11 +162,12 @@ h2 {
     text-decoration: none;
     text-align: left;
     margin-top: 16px;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
 }
 
 .left {
     text-align: left;
+    font-weight: 700;
 }
 
 .whitebtn {
@@ -178,6 +179,12 @@ h2 {
     color: black;
     font-size: 20px;
 }
+
+.arrow {
+    width: 13.3px;
+    margin-right: 6px;
+}
+
 
 .bye {
     width: 56px;
